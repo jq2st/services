@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Заметки
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="outline" slot="end" [routerLink]="'/new'"><ion-icon name="add-outline" slot="start"></ion-icon>Add</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col offset-md="3" size-md="6">
+        <ion-card *ngFor="let note of notesService.notes">
+          <ion-item>
+            <ion-label [routerLink]="['/note', note._id]">{{note.name}}</ion-label>
+            <ion-button (click)="deleteNote(note._id)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+          </ion-item>
+        
+          <ion-card-content style="height: 80px;">
+            {{note.description}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

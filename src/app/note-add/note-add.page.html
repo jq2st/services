@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Добавить заметку</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col offset-md="3" size-md="6">
+        <form [formGroup]="form" (submit)="saveNote()">
+          <ion-item>
+            <ion-label position="floating">Название заметки</ion-label>
+            <ion-input formControlName="name" class="form-control"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Описание заметки</ion-label>
+            <ion-textarea auto-grow formControlName="description" class="form-control"></ion-textarea>
+          </ion-item>
+          <ion-buttons class="ion-margin-top">
+            <ion-button type="submit" color="primary" fill="solid" [disabled]="form.invalid">Добавить</ion-button>
+          </ion-buttons>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
