@@ -1,5 +1,5 @@
-#MEAN Stack
-##MongoDB, Express, Angular(Ionic), NodeJS
+# MEAN Stack
+## MongoDB, Express, Angular(Ionic), NodeJS
 
 npm install -g @ionic/cli
 
